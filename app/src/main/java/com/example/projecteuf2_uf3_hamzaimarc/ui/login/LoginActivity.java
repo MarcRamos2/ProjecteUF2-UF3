@@ -16,7 +16,10 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,17 +39,41 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
 
+
     MediaPlayer player;
+    Animation play,pause;
+    Button buttonPlay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        if (player == null) {
-            player = MediaPlayer.create(this, R.raw.musicadefons);
 
-        }
+        buttonPlay = findViewById(R.id.playmusic);
+
+        play = AnimationUtils.loadAnimation(this,R.anim.play) ;
+        pause = AnimationUtils.loadAnimation(this,R.anim.pause);
+
+
+        buttonPlay.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent){
+
+                if(motionEvent.getAction()== MotionEvent.ACTION_UP){
+                    buttonPlay.startAnimation(play);
+                }else if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                    buttonPlay.startAnimation(pause);
+                }
+                return  true;
+
+            }
+        });
+
+       // if (player == null) {
+      //      player = MediaPlayer.create(this, R.raw.musicadefons);
+
+       // }
         player.start();
 
        // binding.playmusic.setOnClickListener();
