@@ -47,9 +47,13 @@ public class LoginActivity extends AppCompatActivity {
         }
         player.start();
 
+        binding.playmusic.setOnClickListener();
+
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
 
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);

@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/play"
+        android:id="@+id/playmusic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintHorizontal_weight="1"
