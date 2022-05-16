@@ -20,10 +20,12 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.projecteuf2_uf3_hamzaimarc.R;
 import com.example.projecteuf2_uf3_hamzaimarc.ui.login.LoginViewModel;
 import com.example.projecteuf2_uf3_hamzaimarc.ui.login.LoginViewModelFactory;
@@ -47,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         player.start();
 
-        binding.playmusic.setOnClickListener();
+       // binding.playmusic.setOnClickListener();
 
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
@@ -149,6 +151,9 @@ public class LoginActivity extends AppCompatActivity {
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
+
+
+
 
 
 
