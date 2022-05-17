@@ -213,6 +213,7 @@ public class LoginActivity extends AppCompatActivity {
 
         }else{
             player.pause();
+            buttonPlay.clearAnimation();
 
         }
 
