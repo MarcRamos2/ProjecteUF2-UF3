@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     MediaPlayer player;
-    Animation play,pause;
+    Animation play;
     Button buttonPlay;
 
 
@@ -63,8 +63,8 @@ public class LoginActivity extends AppCompatActivity {
 
         buttonPlay = findViewById(R.id.playmusic);
 
-       // play = AnimationUtils.loadAnimation(this,R.anim.play) ;
-        //pause = AnimationUtils.loadAnimation(this,R.anim.pause);
+        play = AnimationUtils.loadAnimation(this,R.anim.play) ;
+
 
 
 
@@ -205,13 +205,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void MusicControl(boolean musicatorn){
-        if(musicatorn == true){
+        if(musicatorn){
             player.start();
+            buttonPlay.startAnimation(play);
 
 
 
         }else{
             player.pause();
+
         }
 
     }

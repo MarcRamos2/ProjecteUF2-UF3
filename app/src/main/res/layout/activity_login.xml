@@ -91,7 +91,7 @@
         android:id="@+id/playmusic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/ic_media_play"
+        android:background="@android:drawable/ic_lock_silent_mode_off"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.5"
