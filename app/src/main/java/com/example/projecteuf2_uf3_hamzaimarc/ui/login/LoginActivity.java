@@ -50,31 +50,19 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        buttonPlay = findViewById(R.id.playmusic);
+        //buttonPlay = findViewById(R.id.playmusic);
 
-        play = AnimationUtils.loadAnimation(this,R.anim.play) ;
-        pause = AnimationUtils.loadAnimation(this,R.anim.pause);
+        //play = AnimationUtils.loadAnimation(this,R.anim.play) ;
+        //pause = AnimationUtils.loadAnimation(this,R.anim.pause);
 
 
-        buttonPlay.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent){
 
-                if(motionEvent.getAction()== MotionEvent.ACTION_UP){
-                    buttonPlay.startAnimation(play);
-                }else if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-                    buttonPlay.startAnimation(pause);
-                }
-                return  true;
-
-            }
-        });
 
        // if (player == null) {
       //      player = MediaPlayer.create(this, R.raw.musicadefons);
 
        // }
-        player.start();
+        //player.start();
 
        // binding.playmusic.setOnClickListener();
 
