@@ -39,21 +39,33 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
 
+    public boolean musicatorn = false ;
+
 
     MediaPlayer player;
     Animation play,pause;
     Button buttonPlay;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        // Variable MediaPlayer on guardem la musica
+        player = MediaPlayer.create(getApplicationContext(), R.raw.musicadefons);
+
+        // Variable bool que controla el torn de la musica
+        // Iniciem amb false
+        musicatorn = false;
 
 
+        buttonPlay = findViewById(R.id.playmusic);
 
-        //buttonPlay = findViewById(R.id.playmusic);
-
-        //play = AnimationUtils.loadAnimation(this,R.anim.play) ;
+       // play = AnimationUtils.loadAnimation(this,R.anim.play) ;
         //pause = AnimationUtils.loadAnimation(this,R.anim.pause);
+
 
 
 
@@ -64,11 +76,36 @@ public class LoginActivity extends AppCompatActivity {
        // }
         //player.start();
 
-       // binding.playmusic.setOnClickListener();
 
 
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+
+
+
+       buttonPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Si esta false será true i si está true será false així activem o
+                // desactivem quan premem el botó
+
+                if(musicatorn == false){
+                    musicatorn = true;
+                    // Cridem a la funció que retorna la musica passant-li el torn (bool)
+                    MusicControl(musicatorn);
+
+                }else {
+                    musicatorn = false;
+                    MusicControl(musicatorn);
+                }
+
+
+
+
+
+            }
+        });
+
+
 
 
 
@@ -166,6 +203,20 @@ public class LoginActivity extends AppCompatActivity {
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
+
+    public void MusicControl(boolean musicatorn){
+        if(musicatorn == true){
+            player.start();
+
+
+
+        }else{
+            player.pause();
+        }
+
+    }
+
+
 
 
 
