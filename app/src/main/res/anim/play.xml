@@ -8,7 +8,7 @@
             android:interpolator="@android:anim/linear_interpolator"
             android:pivotX="50%"
             android:pivotY="50%"
-            android:duration="5000"
+            android:duration="7000"
             android:repeatCount="infinite"
             android:repeatMode="restart"
             />
